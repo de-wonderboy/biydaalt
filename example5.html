@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Хэрэглэгчийн Бүртгэл</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .form-container {
+        margin-right: 20px;
+    }
+    .form-container input {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .form-container button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+    .form-container button:hover {
+        background-color: #0056b3;
+    }
+    .table-container {
+        flex-grow: 1;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table, th, td {
+        border: 1px solid #ccc;
+    }
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+    .delete-btn {
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .delete-btn:hover {
+        background-color: #cc0000;
+    }
+</style>
+</head>
+<body>
+<h1>Хэрэглэгчийн бүртгэл</h1>
+<div class="container">
+    <div class="form-container">
+        <input id="surname" type="text" placeholder="Овог...">
+        <input id="name" type="text" placeholder="Нэр...">
+        <input id="age" type="number" placeholder="Нас...">
+        <button onclick="addUser()">Бүртгэх</button>
+    </div>
+    <div class="table-container">
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Num</th>
+                    <th>Овог</th>
+                    <th>Нэр</th>
+                    <th>Нас</th>
+                    <th>Үйлдэл</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    let userCount = 0;
+
+    function addUser() {
+        const surname = document.getElementById('surname').value.trim();
+        const name = document.getElementById('name').value.trim();
+        const age = document.getElementById('age').value.trim();
+
+        if (!surname || !name || !age) {
+            alert('Бүх талбарыг бөглөнө үү!');
+            return;
+        }
+
+        userCount++;
+        const table = document.getElementById('userTable').querySelector('tbody');
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${userCount}</td>
+            <td>${surname}</td>
+            <td>${name}</td>
+            <td>${age}</td>
+            <td><button class="delete-btn" onclick="deleteUser(this)">X</button></td>
+        `;
+
+        table.appendChild(row);
+
+        document.getElementById('surname').value = '';
+        document.getElementById('name').value = '';
+        document.getElementById('age').value = '';
+    }
+
+    function deleteUser(button) {
+        const row = button.parentElement.parentElement;
+        row.remove();
+        updateRowNumbers();
+    }
+
+    function updateRowNumbers() {
+        const rows = document.querySelectorAll('#userTable tbody tr');
+        userCount = 0; 
+        rows.forEach((row, index) => {
+            userCount++;
+            row.cells[0].textContent = userCount; 
+        });
+    }
+</script>
+</body>
+</html>

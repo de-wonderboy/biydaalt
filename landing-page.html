@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Bliss Ice Cream</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJQ3QhqLMpG8r+KnujsBqQ+3hd6mJg6fcmVSe4hY8y2yJp5hPLDNV7Hcku2d" crossorigin="anonymous">
+    <style>
+        .hero-section {
+            background-image: url('https://via.placeholder.com/1920x600?text=Ice+Cream+Shop');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .feature-icons i {
+            font-size: 2rem;
+            color: #FFC107;
+        }
+
+        .testimonial {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+        }
+
+        .testimonial .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+
+        .flavor-card {
+            transition: transform 0.3s ease;
+        }
+
+        .flavor-card:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div>
+            <h1>Welcome to Sweet Bliss Ice Cream!</h1>
+            <p>Where every scoop is a moment of joy.</p>
+            <a href="#flavors" class="btn btn-light btn-lg">Browse Flavors</a>
+        </div>
+    </section>
+
+    <!-- Flavors Section -->
+    <section id="flavors" class="container py-5">
+        <h2 class="text-center mb-5">Our Flavors</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card flavor-card">
+                    <img src="https://via.placeholder.com/300x200?text=Vanilla" class="card-img-top" alt="Classic Vanilla Bean">
+                    <div class="card-body">
+                        <h5 class="card-title">Classic Vanilla Bean</h5>
+                        <p class="card-text">Pure and rich, a timeless favorite.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card flavor-card">
+                    <img src="https://via.placeholder.com/300x200?text=Chocolate" class="card-img-top" alt="ChocoLuxe">
+                    <div class="card-body">
+                        <h5 class="card-title">ChocoLuxe</h5>
+                        <p class="card-text">Decadent chocolate with a swirl of fudge.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card flavor-card">
+                    <img src="https://via.placeholder.com/300x200?text=Strawberry" class="card-img-top" alt="Strawberry Dream">
+                    <div class="card-body">
+                        <h5 class="card-title">Strawberry Dream</h5>
+                        <p class="card-text">Fresh, fruity, and delightfully sweet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="bg-light py-5">
+        <div class="container text-center">
+            <h2>Why Sweet Bliss?</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+                <div class="col">
+                    <div class="feature-icons text-center">
+                        <i class="bi bi-heart-fill"></i>
+                        <h5>Made with Love</h5>
+                        <p>Every scoop is carefully crafted with passion.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="feature-icons text-center">
+                        <i class="bi bi-basket"></i>
+                        <h5>Fresh Ingredients</h5>
+                        <p>We use only the finest natural ingredients.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="feature-icons text-center">
+                        <i class="bi bi-egg"></i>
+                        <h5>Handmade</h5>
+                        <p>Each flavor is made in small batches to ensure quality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="review">
+        <div class="container text-center">
+            <h2>What Our Customers Say</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <blockquote class="quote">"Absolutely the creamiest ice cream I've ever had. So many delicious flavors!"</blockquote>
+                    <p>- Emily T.</p>
+                </div>
+                <div class="col-md-4">
+                    <blockquote class="quote">"The Caramel Swirl is addictive! Can't get enough of it!"</blockquote>
+                    <p>- Michael R.</p>
+                </div>
+                <div class="col-md-4">
+                    <blockquote class="quote">"I love that they have vegan options that taste just as good as regular ice cream!"</blockquote>
+                    <p>- Sarah L.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h2>Join the Sweet Bliss Family</h2>
+            <p>Get the latest flavors, special discounts, and more! Sign up now.</p>
+            <form class="d-flex justify-content-center mt-3">
+                <input type="email" class="form-control w-50" placeholder="Enter your email" required>
+                <button class="btn btn-light ms-2" type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <p>&copy; 2024 Sweet Bliss Ice Cream | All Rights Reserved</p>
+        <p>
+            <a href="#" class="text-white me-3">Instagram</a>
+            <a href="#" class="text-white me-3">Facebook</a>
+            <a href="#" class="text-white">Twitter</a>
+        </p>
+    </footer>
+
+    <!-- Bootstrap JS and Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0j2exSgpXwCk64Xz9tPAOIfXgVx8EonNr5zyEX7ht7brwD10" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.js"></script>
+</body>
+
+</html>

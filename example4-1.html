@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <title>Example4-1</title>
+    <style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    }
+    .container {
+    display:grid;
+    gap: 10px;
+    width: 70%;
+    max-width: 700px;
+    }
+    .item {
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    }
+    .item-green {
+    background-color: greenyellow; 
+    }
+    .item-blue {
+    background-color: cyan; 
+    }
+    .item-red {
+    background-color: red;
+    }
+    .item-gray {
+    background-color: gray;
+    }
+
+    @media (max-width: 700px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    }
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .item:nth-child(1) {
+        grid-column: span 1;
+    }
+    .item:nth-child(2) {
+        grid-column: span 1;
+    }
+    .item:nth-child(3) {
+        grid-column: span 2;
+    }
+    .item:nth-child(4) {
+        grid-column: span 2;
+    }
+    .item:nth-child(5) {
+        grid-column: span 1;
+    }
+    .item:nth-child(6) {
+        grid-column: span 1;
+    }
+
+    @media (min-width: 701px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .item:nth-child(1) {
+        grid-column: span 1;
+    }
+    .item:nth-child(2) {
+        grid-column: span 1;
+    }
+    .item:nth-child(3) {
+        grid-column: span 2;
+    }
+    .item:nth-child(4) {
+        grid-column: span 2;
+    }
+    .item:nth-child(5) {
+        grid-column: span 2;
+    }
+    .item:nth-child(6) {
+        grid-column: span 4;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="item item-green"></div>
+    <div class="item item-green"></div>
+    <div class="item item-blue"></div>
+    <div class="item item-red"></div>
+    <div class="item item-red"></div>
+    <div class="item item-gray"></div>
+</div>
+</body>
+</html>
